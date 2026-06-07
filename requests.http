@@ -1,0 +1,38 @@
+### 1. Login - Get JWT Token
+POST http://localhost:5121/api/users/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "password"
+}
+
+### 2. Get All Users (Use token from step 1)
+GET http://localhost:5121/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+### 3. Create New User
+POST http://localhost:5121/api/users
+Authorization: Bearer <"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzgwODM5MzYwLCJleHAiOjE3ODA4NDI5NjAsImlhdCI6MTc4MDgzOTM2MH0.vOYEC2pWYqc_8IhP7h5stTNUJ5gDEyjVeH2ePjVo9ms">
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "age": 25
+}
+
+### 4. Update User
+PUT http://localhost:5121/api/users/1
+Authorization: Bearer <"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzgwODM5MzYwLCJleHAiOjE3ODA4NDI5NjAsImlhdCI6MTc4MDgzOTM2MH0.vOYEC2pWYqc_8IhP7h5stTNUJ5gDEyjVeH2ePjVo9ms">
+Content-Type: application/json
+
+{
+    "name": "John Updated",
+    "email": "john.updated@example.com",
+    "age": 26
+}
+
+### 5. Delete User
+DELETE http://localhost:5121/api/users/3
+Authorization: Bearer <"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzgwODM5MzYwLCJleHAiOjE3ODA4NDI5NjAsImlhdCI6MTc4MDgzOTM2MH0.vOYEC2pWYqc_8IhP7h5stTNUJ5gDEyjVeH2ePjVo9ms">
